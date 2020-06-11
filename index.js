@@ -26,18 +26,26 @@ Your method should accept:
 and should return a number. 
 
 For example, burger.discount("teacher") would return 13.5 and burger.discount("public") would return 16.2*/
+
+  function discountPrice( customer){
+  if (customer === "teacher" || customer === "student") {
+    return(burger.price - burger.price * .25)
+  }
+  else if(customer === "public"){
+    return(burger.price - burger.price * .10)
+  }
+  return (burger.price)
+}
+
+console.log(discountPrice("public"));
+
 // burger = {
-//   burger_discount: discount(string){
-//     string: "teacher", "student", "public";
-    
-    
-//     }
-
+//   teacher: "teacher",
+//   student:"student",
+//   public: "public",
+//   discount: discountPrice()
 // }
- 
-//    console.log(burger.discount("teacher"))
-   
-
+// console.log(burger.discount("teacher"))
 
 ///////////////Reviews (MVP)///////////////////
 
@@ -83,9 +91,9 @@ and should return a string in the format `{name} gave the restaurant a {rating},
 */
 function getReviewByIndex(arr, index) {
   
-  return `${arr[index]} gave the restaurant a ${arr.rating} star review and their feedback was: ${arr.feedback}`;
+  return `${arr[index].name} gave the restaurant a ${reviews[index].rating} star review and their feedback was: ${reviews[index].feedback}`;
   }
-  console.log(getReviewByIndex(reviews, 2));
+  console.log(getReviewByIndex(reviews, 0));
 
 /* Task 8: Write a function to get information about the most recent review called `getLastReview`
 
@@ -96,10 +104,10 @@ and should return a string in the format `name} gave the restaurant a {rating}, 
 
 For example, if getLastReview is invoked passing the reviews array it will return `Reyna gave the restaurant a 3.5 star review and their feedback was: "this place is chill with really cool people, great for getting work done on weekdays"`.
 */
-function getLastReview(arr) {
-  
+function getLastReview(arr){
+  return `${arr[8].name} gave the restaurant a ${arr[8].rating} star review and their feedback was: ${arr[8].feedback}`;
 } 
-
+console.log(getLastReview(reviews))
 
 ///////////////🍔☕️🍽 STRETCH🍔☕️🍽////////////////////
 
